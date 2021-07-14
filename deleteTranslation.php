@@ -43,7 +43,7 @@ if (!$result)
     exit(0);
 }
 
-$deleteQuery = $connection->prepare('DELETE FROM translated_words WHERE enlgish = ?');
+$deleteQuery = $connection->prepare('DELETE FROM translated_words WHERE english = ?');
 $deleteQuery->execute($englishWOrd);
 
 echo json_encode('Translation for this word has been deleted');
