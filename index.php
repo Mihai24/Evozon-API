@@ -2,6 +2,6 @@
 
 $token = bin2hex(random_bytes(16));
 
-\session_start();
+\setcookie('token', $token);
 
 echo 'English-Elvish dictionary';
