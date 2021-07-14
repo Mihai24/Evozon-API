@@ -19,7 +19,7 @@ if (!isset($englishdWord))
 
 global $connection;
 
-$query = $connection->prepare('SELECT eldish FROM dictionary WHERE english = ?');
+$query = $connection->prepare('SELECT eldish FROM translated_words WHERE english = ?');
 $query->execute($englishdWord);
 $result = $query->fetch();
 

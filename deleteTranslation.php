@@ -19,7 +19,7 @@ if (!isset($englishWOrd))
 
 global $connection;
 
-$query = $connection->prepare('SELECT eldish FROM dictionary WHERE english = ?');
+$query = $connection->prepare('SELECT english FROM translated_words WHERE english = ?');
 $query->execute($englishWOrd);
 $result = $query->fetch();
 
@@ -28,7 +28,7 @@ if (!$result)
     exit(0);
 }
 
-$deleteQuery = $connection->prepare('DELETE FROM dictionary WHEW enlgish = ?');
+$deleteQuery = $connection->prepare('DELETE FROM translated_words WHERE enlgish = ?');
 $deleteQuery->execute($englishWOrd);
 
 echo json_encode('Translation for this word has been deleted');
